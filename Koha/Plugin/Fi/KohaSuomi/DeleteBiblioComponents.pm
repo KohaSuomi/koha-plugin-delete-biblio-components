@@ -3,6 +3,7 @@ package Koha::Plugin::Fi::KohaSuomi::DeleteBiblioComponents;
 use Modern::Perl;
 use base qw(Koha::Plugins::Base);
 use MARC::Record;
+use Encode qw( encode_utf8 );
 
 use C4::Context;
 use C4::Biblio qw( DelBiblio GetMarcBiblio GetMarcFromKohaField );
@@ -114,7 +115,7 @@ sub _getComponentParts {
             for my $part ( @{$results} ) {
                 #warn "part: $part";
 
-                push @componentXMLs, ref($part) eq 'MARC::Record' ? encode('utf-8', $part->as_xml_record($marcflavour)) : $part;
+                push @componentXMLs, ref($part) eq 'MARC::Record' ? encode_utf8($part->as_xml_record($marcflavour)) : $part;
                 $resultSetSize = $results;
             }
         } else {
