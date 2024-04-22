@@ -6,7 +6,7 @@ use MARC::Record;
 use Encode qw( encode_utf8 );
 
 use C4::Context;
-use C4::Biblio qw( DelBiblio GetMarcBiblio GetMarcFromKohaField );
+use C4::Biblio qw( DelBiblio GetMarcFromKohaField );
 use C4::Search qw( new_record_from_zebra );
 use Koha::Biblios;
 use Koha::Old::Biblios;
