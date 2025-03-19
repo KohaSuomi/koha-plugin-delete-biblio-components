@@ -23,7 +23,7 @@ our $metadata = {
     minimum_version => '19.05.00.000',
     maximum_version => undef,
     version         => '0.0.1',
-    description     => 'When deleting a biblio record, automatically delete the component biblios',
+    description     => 'When deleting a biblio record, automatically delete the component biblios. (Paikalliskannat, Täti)',
 };
 
 sub new {
